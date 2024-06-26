@@ -67,6 +67,7 @@ a) Tracking and Trajectory Algorithm <br/>
 
 
 <br/>b) Approaching Decision Alogorithm <br/>
+<br/>
 
 def is_approaching(trajectory, observer_position):
     if len(trajectory) < 5:
@@ -78,6 +79,7 @@ def is_approaching(trajectory, observer_position):
     size_indices = np.arange(len(sizes))
     slope_sizes, _, _, _, _ = linregress(size_indices, sizes)
     return slope_distances < 0 and slope_sizes > 0
+<br/>
 
 <br/>c) Within RoI Decision Algorithm <br/>
 def draw_trapezoid(w, h):
