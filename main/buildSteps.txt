@@ -1,0 +1,21 @@
+# Generate WTS file 
+python3 gen_wts.py -w yolov7-tiny.pt -o yolov7-tiny.wts
+python3 gen_wts.py -w best_0608.pt -o best_0608.wts
+
+# Cmake & Make 
+# If using custom model, make sure to update kNumClas in yolov7/include/config.h
+cd yolov7/
+mkdir build
+cd build
+cp ../../yolov7-tiny.wts .
+cp ../../best_0609.wts .
+cmake ..
+make 
+
+# Build engine
+sudo ./yolov7 -s yolov7-tiny.wts  yolov7-tiny.engine t
+sudo ./yolov7 -s best_0609.wts  best_0609.engine t
+
+# Test
+sudo ./yolov7 -d yolov7-tiny.engine ../images
+sudo ./yolov7 -d best_0609.engine ../images
