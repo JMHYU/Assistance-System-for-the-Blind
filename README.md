@@ -67,11 +67,12 @@ a) Tracking and Trajectory Algorithm <br/>
 
 
 <br/>b) Approaching Decision Alogorithm <br/>
-<br/><img width="80%" src="https://github.com/JMHYU/Assistance-System-for-the-Blind-using-Object-Detection/assets/165994759/6b036c7b-1c25-48a9-9a95-e86001044ea7"/>
-<br/>
+This algorithm keeps trajectory (bounding box info) of every movable objects close enough to an observer. It uses linear regression to decide whether objects are approaching or not.
+
 <br/><img width="80%" src="https://github.com/JMHYU/Assistance-System-for-the-Blind-using-Object-Detection/assets/165994759/6e4b635c-8d6c-48f9-afd7-3fd7b60a34c6"/>
 <br/>
-
+<br/><img width="80%" src="https://github.com/JMHYU/Assistance-System-for-the-Blind-using-Object-Detection/assets/165994759/6b036c7b-1c25-48a9-9a95-e86001044ea7"/>
+<br/>
 
 def is_approaching(trajectory, observer_position):
     if len(trajectory) < 5:
