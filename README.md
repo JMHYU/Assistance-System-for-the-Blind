@@ -36,4 +36,12 @@ I converted a YOLOv7-tiny custom model into a TRT engine using the procedure out
 
 <br/>
 ### 2. Assistance Algorithm
+a) Tracking and Trajectory Algorithm <br/>
+Instead of usinf OpenCV trackers, I have decided to make my own tracking algorithm for several reasons. First, OpenCV trackers track the object using only bbox, thus it lacks of the object class information. Secondly, OpenCV trackers cannot properly change the bbox size as the objects get closer to or further from the observer. For these reasons, I have created a simple tracking algorithm that two consecutive frames
+b) Approaching Decision Alogorithm <br/>
 
+c) Within RoI Decision Algorithm <br/>
+
+
+<br/>Project Presentation Link<br/>It is in Korean though <br/>
+https://docs.google.com/presentation/d/1ycZrInbY8QWnPFpI34aBm5Wn_WDPIOKC/edit?usp=drive_link&ouid=107835171795359080960&rtpof=true&sd=true
