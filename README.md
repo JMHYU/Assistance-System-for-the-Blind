@@ -20,6 +20,7 @@ To be practical for real-world usage, the entire system, including the CNN model
 
 ## Technical contributions
 ### 1. Baseline
+<br/>
 a) Transfer Learning YOLOv7-tiny model to make a custom model
 - DataSet: https://aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=realm&dataSetSn=189 <br/>
 (This dataset is open to Korean nationals only) <br/>
