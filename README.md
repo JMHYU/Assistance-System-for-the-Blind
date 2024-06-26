@@ -34,5 +34,6 @@ I had to edit the number of class 'nc' from 80 to 29 (the dataset I am using has
 b) Building TensorRT Engine on Jetson Nano <br/>
 I converted a YOLOv7-tiny custom model into a TRT engine using the procedure outlined on Github at JetsonYoloV7-TensorRT (https://github.com/mailrocketsystems/JetsonYoloV7-TensorRT).
 
+<br/>
 ### 2. Assistance Algorithm
 
