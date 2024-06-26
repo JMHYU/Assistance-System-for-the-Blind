@@ -22,7 +22,7 @@ To be practical for real-world usage, the entire system, including the CNN model
 
 ## Technical contributions
 ### 1. Baseline
-a) Transfer Learning YOLOv7-tiny model to make a custom model
+a) Transfer Learning YOLOv7-tiny model to make a custom model (best_0609.pt, best_0609.engine)
 - DataSet: https://aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=realm&dataSetSn=189 <br/>
 (This dataset is open to Korean nationals only) <br/>
 > - Object classes (subcategory: 'movable objects'): Bicycle, Bus, Car, Carrier, Cat, Dog, Motorcycle, Movable Signage, Person, Scooter, Stroller, Truck, Wheelchair <br/>
