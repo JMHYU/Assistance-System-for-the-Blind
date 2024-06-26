@@ -10,10 +10,10 @@ from collections import deque
 from scipy.stats import linregress
 
 # Initialize YOLO model
-model = YoloTRT(library="yolov7/build/libmyplugins.so", engine="yolov7/build/best_0609.engine", conf=0.5)
+model = YoloTRT(library="main/yolov7/build/libmyplugins.so", engine="main/yolov7/build/best_0609.engine", conf=0.5)
 
 # Video capture
-cap = cv2.VideoCapture("videos/demo1.mov")
+cap = cv2.VideoCapture("main/videos/demo1.mov")
 
 if not cap.isOpened():
     print("Error: Could not open video.")
