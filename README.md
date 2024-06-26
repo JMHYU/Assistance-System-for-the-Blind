@@ -39,10 +39,37 @@ I converted a YOLOv7-tiny custom model into a TRT engine using the procedure out
 
 ### 2. Assistance Algorithm
 a) Tracking and Trajectory Algorithm <br/>
-Instead of usinf OpenCV trackers, I have decided to make my own tracking algorithm for several reasons. First, OpenCV trackers track the object using only bbox, thus it lacks of the object class information. Secondly, OpenCV trackers cannot properly change the bbox size as the objects get closer to or further from the observer. For these reasons, I have created a simple tracking algorithm that two consecutive frames
-b) Approaching Decision Alogorithm <br/>
+Instead of using OpenCV trackers, I have decided to develop my own tracking algorithm for several reasons. First, OpenCV trackers only use bounding boxes to track objects, which means they lack information about the object's class. Secondly, OpenCV trackers cannot properly adjust the bounding box size as objects move closer to or further from the observer. Because of these limitations, I have created a simple tracking algorithm. It compares two consecutive frames, calculates the Intersection over Union (IoU) of the bounding boxes for the same classes, identifies the highest IoU and its corresponding bounding box, and if the highest IoU exceeds a certain threshold, it maintains the same tracking ID.
+'''
+...
+            if w > w_threshold or h > h_threshold:
+                highest_iou = 0
+                matched_id = None
 
-c) Within RoI Decision Algorithm <br/>
+                for obj_id in object_trajectories:
+                    if object_classes.get(obj_id) == obj['class']:
+                        iou = calculate_iou([x, y, w, h], object_trajectories[obj_id][-1][2])
+                        if iou > highest_iou:
+                            highest_iou = iou
+                            matched_id = obj_id
+
+                if matched_id is not None and highest_iou > 0.3:
+                    obj_id = matched_id
+                else:
+                    obj_id = len(object_trajectories)
+                    object_trajectories[obj_id] = deque(maxlen=trajectory_length)
+
+                obj['id'] = obj_id
+                object_classes[obj_id] = obj['class']
+
+                box1 = np.array([x, y, w, h], dtype=np.float32)
+                object_trajectories[obj_id].append((get_center(box), w * h, box1))
+'''
+
+<br/>b) Approaching Decision Alogorithm <br/>
+
+
+<br/>c) Within RoI Decision Algorithm <br/>
 
 
 <br/>Project Presentation Link<br/>(It is in Korean though)<br/>
