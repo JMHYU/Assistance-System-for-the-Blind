@@ -22,9 +22,9 @@ To be practical for real-world usage, the entire system, including the CNN model
 ### 1. Baseline
 a) Transfer Learning YOLOv7-tiny model to make a custom model
 - DataSet: https://aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=realm&dataSetSn=189
-(This dataset is open to Korean nationals only)
- -> Object classes(subcategory: 'movable objects'): Bicycle, Bus, Car, Carrier, Cat, Dog, Motorcycle, Movable Signage, Person, Scooter, Stroller, Truck, Wheelchair
- -> Object classes(subcategory: 'fixed object objects'): Barricade, Bench, Bollard, Chair, Fire Hydrant, Kiosk, Parking Meter, Pole, Potted Plant, Power Controller, Stop, Table, Traffic Light, Traffic Light Controller, Traffic Sign, Tree Trunk
+(This dataset is open to Korean nationals only) <br/>
+ -> Object classes(subcategory: 'movable objects'): Bicycle, Bus, Car, Carrier, Cat, Dog, Motorcycle, Movable Signage, Person, Scooter, Stroller, Truck, Wheelchair <br/>
+ -> Object classes(subcategory: 'fixed object objects'): Barricade, Bench, Bollard, Chair, Fire Hydrant, Kiosk, Parking Meter, Pole, Potted Plant, Power Controller, Stop, Table, Traffic Light, Traffic Light Controller, Traffic Sign, Tree Trunk <br/>
 
 - Training: using the official YOLOv7 Github Repository (https://github.com/WongKinYiu/yolov7)
 (Important: Instead of using cfg/training/yolov7-tiny.yaml, use cfg/deploy/yolov7-tiny.yaml while training)
