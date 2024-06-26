@@ -13,3 +13,5 @@ The system needs to detect obstacles encountered on sidewalks covered with tacti
 It is crucial for the algorithm to provide sufficient context so that visually impaired users can independently assess situations, recognize the level of danger, and plan their movements accordingly. The system should be capable of identifying the type of object and its state (whether it is within the region of interest or approaching).
 
 To be practical for real-world usage, the entire system, including the CNN model and algorithm, must operate on an edge device like the Jetson Nano, functioning independently without internet connectivity. It should also be applicable to live walking videos captured by a camera, with processing speeds fast enough to maintain a frame rate of 15 FPS.
+
+<br/>
