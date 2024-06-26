@@ -45,5 +45,5 @@ b) Approaching Decision Alogorithm <br/>
 c) Within RoI Decision Algorithm <br/>
 
 
-<br/>Project Presentation Link<br/>It is in Korean though <br/>
+<br/>Project Presentation Link<br/>(It is in Korean though)<br/>
 https://docs.google.com/presentation/d/1ycZrInbY8QWnPFpI34aBm5Wn_WDPIOKC/edit?usp=drive_link&ouid=107835171795359080960&rtpof=true&sd=true
