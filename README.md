@@ -85,7 +85,7 @@ def is_approaching(trajectory, observer_position):
 <br/>c) Within RoI Decision Algorithm <br/>
 <br/><img width="80%" src="https://github.com/JMHYU/Assistance-System-for-the-Blind-using-Object-Detection/assets/165994759/4277348f-5204-4624-9b66-9c281b6f3178"/>
 <br/>
-<br/><img width="80%" src="[https://github.com/JMHYU/Assistance-System-for-the-Blind-using-Object-Detection/assets/165994759/4277348f-5204-4624-9b66-9c281b6f3178](https://github.com/JMHYU/Assistance-System-for-the-Blind-using-Object-Detection/assets/165994759/271c3093-ec84-4b28-9b63-e6b387c5282d)"/>
+<br/><img width="80%" src="https://github.com/JMHYU/Assistance-System-for-the-Blind-using-Object-Detection/assets/165994759/4277348f-5204-4624-9b66-9c281b6f3178](https://github.com/JMHYU/Assistance-System-for-the-Blind-using-Object-Detection/assets/165994759/271c3093-ec84-4b28-9b63-e6b387c5282d"/>
 <br/>
 
 
