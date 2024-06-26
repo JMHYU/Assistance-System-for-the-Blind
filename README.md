@@ -42,7 +42,7 @@ a) Tracking and Trajectory Algorithm <br/>
 - Instead of using OpenCV trackers, I have decided to develop my own tracking algorithm for several reasons. First, OpenCV trackers only use bounding boxes to track objects, which means they lack information about the object's class. Secondly, OpenCV trackers cannot properly adjust the bounding box size as objects move closer to or further from the observer. Because of these limitations, I have created a simple tracking algorithm. It compares two consecutive frames, calculates the Intersection over Union (IoU) of the bounding boxes for the same classes, identifies the highest IoU and its corresponding bounding box, and if the highest IoU exceeds a certain threshold, it maintains the same tracking ID. <br/>
 
 
-  if w > w_threshold or h > h_threshold:
+if w > w_threshold or h > h_threshold:
       highest_iou = 0
       matched_id = None
 
@@ -74,16 +74,16 @@ This algorithm keeps trajectory (bounding box info) of every movable objects clo
 <br/><img width="80%" src="https://github.com/JMHYU/Assistance-System-for-the-Blind-using-Object-Detection/assets/165994759/6b036c7b-1c25-48a9-9a95-e86001044ea7"/>
 <br/>
 
-def is_approaching(trajectory, observer_position):
-    if len(trajectory) < 5:
-        return False
-    distances = [distance(pos_size[0], observer_position) for pos_size in trajectory]
-    sizes = [pos_size[1] for pos_size in trajectory]
-    distance_indices = np.arange(len(distances))
-    slope_distances, _, _, _, _ = linregress(distance_indices, distances)
-    size_indices = np.arange(len(sizes))
-    slope_sizes, _, _, _, _ = linregress(size_indices, sizes)
-    return slope_distances < 0 and slope_sizes > 0
+>def is_approaching(trajectory, observer_position):
+>    if len(trajectory) < 5:
+>        return False
+>    distances = [distance(pos_size[0], observer_position) for pos_size in trajectory]
+>    sizes = [pos_size[1] for pos_size in trajectory]
+>    distance_indices = np.arange(len(distances))
+>    slope_distances, _, _, _, _ = linregress(distance_indices, distances)
+>    size_indices = np.arange(len(sizes))
+>    slope_sizes, _, _, _, _ = linregress(size_indices, sizes)
+>    return slope_distances < 0 and slope_sizes > 0
 
 
 <br/>c) Within RoI Decision Algorithm <br/>
