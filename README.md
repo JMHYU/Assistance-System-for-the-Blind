@@ -68,9 +68,89 @@ a) Tracking and Trajectory Algorithm <br/>
 
 <br/>b) Approaching Decision Alogorithm <br/>
 
+def is_approaching(trajectory, observer_position):
+    if len(trajectory) < 5:
+        return False
+    distances = [distance(pos_size[0], observer_position) for pos_size in trajectory]
+    sizes = [pos_size[1] for pos_size in trajectory]
+    distance_indices = np.arange(len(distances))
+    slope_distances, _, _, _, _ = linregress(distance_indices, distances)
+    size_indices = np.arange(len(sizes))
+    slope_sizes, _, _, _, _ = linregress(size_indices, sizes)
+    return slope_distances < 0 and slope_sizes > 0
 
 <br/>c) Within RoI Decision Algorithm <br/>
+def draw_trapezoid(w, h):
+    top_left = (int(w * 0.45), int(h * 0.7))
+    top_right = (int(w * 0.55), int(h * 0.7))
+    bottom_left = (int(w * 0.4), h)
+    bottom_right = (int(w * 0.6), h)
+    points = np.array([top_left, top_right, bottom_right, bottom_left], dtype=np.int32)
+    cv2.polylines(frame, [points], isClosed=True, color=(0,255,0), thickness=2)
+    return points
 
+
+def is_point_in_trapezoid(point, trapezoid):
+    x, y = point
+    result = cv2.pointPolygonTest(trapezoid, (x, y), False)
+    return result >= 0
+
+
+def is_rect_in_trapezoid(box, trapezoid):
+    rect_point = [(box[0], box[3]), (box[2], box[3])]
+    for point in rect_point:
+        if is_point_in_trapezoid(point, trapezoid):
+            return True
+    return False
+
+def on_segment(p, q, r):
+    if (q[0] <= max(p[0], r[0]) and q[0] >= min(p[0], r[0]) and
+            q[1] <= max(p[1], r[1]) and q[1] >= min(p[1], r[1])):
+        return True
+    return False
+
+def orientation(p, q, r):
+    val = (q[1] - p[1]) * (r[0] - q[0]) - (q[0] - p[0]) * (r[1] - q[1])
+    if val == 0:
+        return 0
+    return 1 if val > 0 else 2
+
+def do_intersect(p1, q1, p2, q2):
+
+    o1 = orientation(p1, q1, p2)
+    o2 = orientation(p1, q1, q2)
+    o3 = orientation(p2, q2, p1)
+    o4 = orientation(p2, q2, q1)
+
+    if o1 != o2 and o3 != o4:
+        return True
+
+    if o1 == 0 and on_segment(p1, p2, q1):
+        return True
+
+    if o2 == 0 and on_segment(p1, q2, q1):
+        return True
+
+    if o3 == 0 and on_segment(p2, p1, q2):
+        return True
+
+    if o4 == 0 and on_segment(p2, q1, q2):
+        return True
+
+    return False
+
+def is_box_intersecting_trapezoid(box, trapezoid):
+    top_left, top_right, bottom_right, bottom_left = trapezoid
+
+    sides = [(top_left, bottom_left), (top_right, bottom_right)]
+
+    segment=[(box[0], box[3]), (box[2], box[3])]
+
+    for side in sides:
+        if do_intersect(side[0], side[1], segment[0], segment[1]):
+            return True
+
+    return False
 
 <br/>Project Presentation Link<br/>(It is in Korean though)<br/>
 https://docs.google.com/presentation/d/1ycZrInbY8QWnPFpI34aBm5Wn_WDPIOKC/edit?usp=drive_link&ouid=107835171795359080960&rtpof=true&sd=true
