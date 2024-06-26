@@ -18,6 +18,18 @@ To be practical for real-world usage, the entire system, including the CNN model
 <br/><img width="80%" src="https://github.com/JMHYU/Assistance-System-for-the-Blind-using-Object-Detection/assets/165994759/11ae830f-d86b-45d6-a0de-4c590a7ea47b"/>
 <br/> <br/> <br/>
 
-## Motivation and Objectives
-### Baseline
+## Technical contributions
+### 1. Baseline
+a) Transfer Learning YOLOv7-tiny model to make a custom model
+- DataSet: https://aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=realm&dataSetSn=189
+(This dataset is open to Korean nationals only)
+ -> Object classes(subcategory: 'movable objects'): Bicycle, Bus, Car, Carrier, Cat, Dog, Motorcycle, Movable Signage, Person, Scooter, Stroller, Truck, Wheelchair
+ -> Object classes(subcategory: 'fixed object objects'): Barricade, Bench, Bollard, Chair, Fire Hydrant, Kiosk, Parking Meter, Pole, Potted Plant, Power Controller, Stop, Table, Traffic Light, Traffic Light Controller, Traffic Sign, Tree Trunk
+
+- Training: using the official YOLOv7 Github Repository (https://github.com/WongKinYiu/yolov7)
+(Important: Instead of using cfg/training/yolov7-tiny.yaml, use cfg/deploy/yolov7-tiny.yaml while training)
+I had to edit the number of class 'nc' from 80 to 29 (the dataset I am using has 29 classes) in yolov7-tiny.yaml
+
+
+b) Building TensorRT Engine on Jetson Nano
 I converted a YOLOv7-tiny custom model into a TRT engine using the procedure outlined on Github at JetsonYoloV7-TensorRT (https://github.com/mailrocketsystems/JetsonYoloV7-TensorRT).
