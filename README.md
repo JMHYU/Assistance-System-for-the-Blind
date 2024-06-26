@@ -50,20 +50,20 @@ if w > w_threshold or h > h_threshold:
           if object_classes.get(obj_id) == obj['class']:
               iou = calculate_iou([x, y, w, h], object_trajectories[obj_id][-1][2])
                  if iou > highest_iou:
-                 highest_iou = iou
-                 matched_id = obj_id
+                     highest_iou = iou
+                     matched_id = obj_id
 
       if matched_id is not None and highest_iou > 0.3:
           obj_id = matched_id
-                else:
-                    obj_id = len(object_trajectories)
-                    object_trajectories[obj_id] = deque(maxlen=trajectory_length)
+      else:
+          obj_id = len(object_trajectories)
+          object_trajectories[obj_id] = deque(maxlen=trajectory_length)
 
-                obj['id'] = obj_id
-                object_classes[obj_id] = obj['class']
+      obj['id'] = obj_id
+      object_classes[obj_id] = obj['class']
 
-                box1 = np.array([x, y, w, h], dtype=np.float32)
-                object_trajectories[obj_id].append((get_center(box), w * h, box1))
+      box1 = np.array([x, y, w, h], dtype=np.float32)
+      object_trajectories[obj_id].append((get_center(box), w * h, box1))
 ```
 
 <br/>b) Approaching Decision Alogorithm <br/>
