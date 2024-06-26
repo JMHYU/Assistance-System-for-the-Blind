@@ -39,9 +39,9 @@ I converted a YOLOv7-tiny custom model into a TRT engine using the procedure out
 
 ### 2. Assistance Algorithm
 a) Tracking and Trajectory Algorithm <br/>
-Instead of using OpenCV trackers, I have decided to develop my own tracking algorithm for several reasons. First, OpenCV trackers only use bounding boxes to track objects, which means they lack information about the object's class. Secondly, OpenCV trackers cannot properly adjust the bounding box size as objects move closer to or further from the observer. Because of these limitations, I have created a simple tracking algorithm. It compares two consecutive frames, calculates the Intersection over Union (IoU) of the bounding boxes for the same classes, identifies the highest IoU and its corresponding bounding box, and if the highest IoU exceeds a certain threshold, it maintains the same tracking ID.
-'''
-            if w > w_threshold or h > h_threshold:
+Instead of using OpenCV trackers, I have decided to develop my own tracking algorithm for several reasons. First, OpenCV trackers only use bounding boxes to track objects, which means they lack information about the object's class. Secondly, OpenCV trackers cannot properly adjust the bounding box size as objects move closer to or further from the observer. Because of these limitations, I have created a simple tracking algorithm. It compares two consecutive frames, calculates the Intersection over Union (IoU) of the bounding boxes for the same classes, identifies the highest IoU and its corresponding bounding box, and if the highest IoU exceeds a certain threshold, it maintains the same tracking ID. <br/>
+
+            '''if w > w_threshold or h > h_threshold:
                 highest_iou = 0
                 matched_id = None
 
@@ -62,8 +62,7 @@ Instead of using OpenCV trackers, I have decided to develop my own tracking algo
                 object_classes[obj_id] = obj['class']
 
                 box1 = np.array([x, y, w, h], dtype=np.float32)
-                object_trajectories[obj_id].append((get_center(box), w * h, box1))
-'''
+                object_trajectories[obj_id].append((get_center(box), w * h, box1))''''
 
 <br/>b) Approaching Decision Alogorithm <br/>
 
