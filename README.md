@@ -67,7 +67,7 @@ a) Tracking and Trajectory Algorithm <br/>
 
 
 <br/>b) Approaching Decision Alogorithm <br/>
-<br/><img width="80%" src="https://github.com/JMHYU/Assistance-System-for-the-Blind-using-Object-Detection/assets/165994759/11ae830f-d86b-45d6-a0de-4c590a7ea47b"/>
+<br/><img width="80%" src="https://github.com/JMHYU/Assistance-System-for-the-Blind-using-Object-Detection/assets/165994759/6b036c7b-1c25-48a9-9a95-e86001044ea7"/>
 <br/>
 
 def is_approaching(trajectory, observer_position):
