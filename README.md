@@ -42,19 +42,19 @@ a) Tracking and Trajectory Algorithm <br/>
 - Instead of using OpenCV trackers, I have decided to develop my own tracking algorithm for several reasons. First, OpenCV trackers only use bounding boxes to track objects, which means they lack information about the object's class. Secondly, OpenCV trackers cannot properly adjust the bounding box size as objects move closer to or further from the observer. Because of these limitations, I have created a simple tracking algorithm. It compares two consecutive frames, calculates the Intersection over Union (IoU) of the bounding boxes for the same classes, identifies the highest IoU and its corresponding bounding box, and if the highest IoU exceeds a certain threshold, it maintains the same tracking ID. <br/>
 
 
-            if w > w_threshold or h > h_threshold:
-                highest_iou = 0
-                matched_id = None
+  if w > w_threshold or h > h_threshold:
+      highest_iou = 0
+      matched_id = None
 
-                for obj_id in object_trajectories:
-                    if object_classes.get(obj_id) == obj['class']:
-                        iou = calculate_iou([x, y, w, h], object_trajectories[obj_id][-1][2])
-                        if iou > highest_iou:
-                            highest_iou = iou
-                            matched_id = obj_id
+      for obj_id in object_trajectories:
+          if object_classes.get(obj_id) == obj['class']:
+              iou = calculate_iou([x, y, w, h], object_trajectories[obj_id][-1][2])
+                 if iou > highest_iou:
+                 highest_iou = iou
+                 matched_id = obj_id
 
-                if matched_id is not None and highest_iou > 0.3:
-                    obj_id = matched_id
+      if matched_id is not None and highest_iou > 0.3:
+          obj_id = matched_id
                 else:
                     obj_id = len(object_trajectories)
                     object_trajectories[obj_id] = deque(maxlen=trajectory_length)
@@ -67,7 +67,7 @@ a) Tracking and Trajectory Algorithm <br/>
 
 
 <br/>b) Approaching Decision Alogorithm <br/>
-<br/>
+
 
 def is_approaching(trajectory, observer_position):
     if len(trajectory) < 5:
@@ -79,7 +79,7 @@ def is_approaching(trajectory, observer_position):
     size_indices = np.arange(len(sizes))
     slope_sizes, _, _, _, _ = linregress(size_indices, sizes)
     return slope_distances < 0 and slope_sizes > 0
-<br/>
+
 
 <br/>c) Within RoI Decision Algorithm <br/>
 def draw_trapezoid(w, h):
