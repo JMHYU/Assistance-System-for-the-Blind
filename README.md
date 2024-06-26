@@ -1,6 +1,7 @@
 # Assistance System for the Blind using Object Detection (YOLOv7)
 I designed and implemented a real-time pedestrian assistance system for visually impaired individuals,  utilizing Jetson Nano board. Fine-tuned YOLOv7 with a custom dataset, optimized it with TensorRT for real-time, on-device performance, and developed an auditory guidance system incorporating an object tracking algorithm. 
 <br/> <br/> <br/>
+
 ## Motivation and Objectives
 ### 1. Motivation
 Lately, there has been an increasing presence of various obstacles—such as shared scooters, bicycles, pedestrian protection bollards, delivery motorcycles, and various types of signage—on tactile paving blocks meant for the visually impaired in Korea. This unauthorized placement severely threatens the mobility rights of visually impaired individuals, particularly affecting those who are completely blind. These individuals face significant risks during navigation as they cannot identify these obstacles, even if they detect them, leading to considerable discomfort.
@@ -15,3 +16,8 @@ It is crucial for the algorithm to provide sufficient context so that visually i
 To be practical for real-world usage, the entire system, including the CNN model and algorithm, must operate on an edge device like the Jetson Nano, functioning independently without internet connectivity. It should also be applicable to live walking videos captured by a camera, with processing speeds fast enough to maintain a frame rate of 15 FPS.
 
 <br/><img width="80%" src="https://github.com/JMHYU/Assistance-System-for-the-Blind-using-Object-Detection/assets/165994759/11ae830f-d86b-45d6-a0de-4c590a7ea47b"/>
+<br/> <br/> <br/>
+
+## Motivation and Objectives
+### Baseline
+I converted a YOLOv7-tiny custom model into a TRT engine using the procedure outlined on Github at JetsonYoloV7-TensorRT (https://github.com/mailrocketsystems/JetsonYoloV7-TensorRT).
