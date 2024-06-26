@@ -74,7 +74,7 @@ This algorithm keeps trajectory (bounding box info) of every movable objects clo
 <br/><img width="80%" src="https://github.com/JMHYU/Assistance-System-for-the-Blind-using-Object-Detection/assets/165994759/6b036c7b-1c25-48a9-9a95-e86001044ea7"/>
 <br/>
 
-'''python
+```python
 def is_approaching(trajectory, observer_position):
     if len(trajectory) < 5:
         return False
@@ -85,7 +85,7 @@ def is_approaching(trajectory, observer_position):
     size_indices = np.arange(len(sizes))
     slope_sizes, _, _, _, _ = linregress(size_indices, sizes)
     return slope_distances < 0 and slope_sizes > 0
-'''
+```
 
 <br/>c) Within RoI Decision Algorithm <br/>
 <br/><img width="80%" src="https://github.com/JMHYU/Assistance-System-for-the-Blind-using-Object-Detection/assets/165994759/4277348f-5204-4624-9b66-9c281b6f3178"/>
