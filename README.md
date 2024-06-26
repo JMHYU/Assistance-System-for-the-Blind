@@ -33,8 +33,8 @@ I had to edit the number of class 'nc' from 80 to 29 (the dataset I am using has
 
 b) Building TensorRT Engine on Jetson Nano <br/>
 I converted a YOLOv7-tiny custom model into a TRT engine using the procedure outlined on Github at JetsonYoloV7-TensorRT (https://github.com/mailrocketsystems/JetsonYoloV7-TensorRT).
-
 <br/>
+
 ### 2. Assistance Algorithm
 a) Tracking and Trajectory Algorithm <br/>
 Instead of usinf OpenCV trackers, I have decided to make my own tracking algorithm for several reasons. First, OpenCV trackers track the object using only bbox, thus it lacks of the object class information. Secondly, OpenCV trackers cannot properly change the bbox size as the objects get closer to or further from the observer. For these reasons, I have created a simple tracking algorithm that two consecutive frames
