@@ -15,4 +15,4 @@ It is crucial for the algorithm to provide sufficient context so that visually i
 To be practical for real-world usage, the entire system, including the CNN model and algorithm, must operate on an edge device like the Jetson Nano, functioning independently without internet connectivity. It should also be applicable to live walking videos captured by a camera, with processing speeds fast enough to maintain a frame rate of 15 FPS.
 
 <br/>
-<img width="80%" src="https://github.com/JMHYU/Assistance-System-for-the-Blind-using-Object-Detection/issues/1#issue-2374695868"/>
+<img width="80%" src="![flowchart](https://github.com/JMHYU/Assistance-System-for-the-Blind-using-Object-Detection/assets/165994759/11ae830f-d86b-45d6-a0de-4c590a7ea47b)"/>
