@@ -29,7 +29,7 @@ a) Transfer Learning YOLOv7-tiny model to make a custom model
 - Training: used the official YOLOv7 Github Repository (https://github.com/WongKinYiu/yolov7) <br/>
 (Important: Instead of using cfg/training/yolov7-tiny.yaml, use cfg/deploy/yolov7-tiny.yaml while training)
 I had to edit the number of class 'nc' from 80 to 29 (the dataset I am using has 29 classes) in yolov7-tiny.yaml
+<br/>
 
-
-b) Building TensorRT Engine on Jetson Nano
+b) Building TensorRT Engine on Jetson Nano <br/>
 I converted a YOLOv7-tiny custom model into a TRT engine using the procedure outlined on Github at JetsonYoloV7-TensorRT (https://github.com/mailrocketsystems/JetsonYoloV7-TensorRT).
