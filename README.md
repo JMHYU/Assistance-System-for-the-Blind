@@ -76,7 +76,7 @@ if w > w_threshold or h > h_threshold:
 ```
 
 <br/>b) Approaching Decision Alogorithm <br/>
-This algorithm keeps trajectory (bounding box info) of every movable objects close enough to an observer. It uses linear regression to decide whether objects are approaching or not.
+- This algorithm keeps trajectory (bounding box info) of every movable objects close enough to an observer. It uses linear regression to decide whether objects are approaching or not.
 
 <br/><img width="80%" src="https://github.com/JMHYU/Assistance-System-for-the-Blind-using-Object-Detection/assets/165994759/6e4b635c-8d6c-48f9-afd7-3fd7b60a34c6"/>
 <br/>
