@@ -6,9 +6,11 @@ I designed and implemented a real-time pedestrian assistance system for visually
 <br/> <br/>
 
 ## Table of Contents
-- [Motivation and Objectives](#Motivation and Objectives)
-- [Technical contributions](#Technical contributions)
-- [Project Presentation](#Project Presentation)
+- [Motivation and Objectives] 
+- [Technical contributions]
+> 1. Baseline (Foundation model and TensorRT)
+> 2. Algorithm
+- [Project Presentation]
 <br/> <br/>
 
 ## Motivation and Objectives
@@ -28,7 +30,7 @@ To be practical for real-world usage, the entire system, including the CNN model
 <br/> <br/> <br/>
 
 ## Technical contributions
-### 1. Baseline
+### 1. Baseline (Foundation model and TensorRT)
 a) Transfer Learning YOLOv7-tiny model to make a custom model (best_0609.pt, best_0609.engine)
 - DataSet: https://aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=realm&dataSetSn=189 <br/>
 (This dataset is open to Korean nationals only) <br/>
@@ -44,7 +46,7 @@ b) Building TensorRT Engine on Jetson Nano <br/>
 - I converted a YOLOv7-tiny custom model into a TRT engine using the procedure outlined on Github at JetsonYoloV7-TensorRT (https://github.com/mailrocketsystems/JetsonYoloV7-TensorRT).
 <br/>
 
-### 2. Assistance Algorithm (Check demo.py)
+### 2. Algorithm (Check demo.py)
 a) Tracking and Trajectory Algorithm <br/>
 - Instead of using OpenCV trackers, I have decided to develop my own tracking algorithm for several reasons. First, OpenCV trackers only use bounding boxes to track objects, which means they lack information about the object's class. Secondly, OpenCV trackers cannot properly adjust the bounding box size as objects move closer to or further from the observer. Because of these limitations, I have created a simple tracking algorithm. It compares two consecutive frames, calculates the Intersection over Union (IoU) of the bounding boxes for the same classes, identifies the highest IoU and its corresponding bounding box, and if the highest IoU exceeds a certain threshold, it maintains the same tracking ID. <br/>
 
