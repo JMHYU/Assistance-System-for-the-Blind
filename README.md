@@ -4,6 +4,13 @@ I designed and implemented a real-time pedestrian assistance system for visually
 
 [![Video Label](http://img.youtube.com/vi/tfpMqwRx1tE/0.jpg)](https://youtu.be/tfpMqwRx1tE)
 <br/> <br/>
+
+## Table of Contents
+- [Motivation and Objectives](#Motivation and Objectives)
+- [Technical contributions](#Technical contributions)
+- [Project Presentation](#Project Presentation)
+<br/> <br/>
+
 ## Motivation and Objectives
 ### 1. Motivation
 Lately, there has been an increasing presence of various obstacles—such as shared scooters, bicycles, pedestrian protection bollards, delivery motorcycles, and various types of signage—on tactile paving blocks meant for the visually impaired in Korea. This unauthorized placement severely threatens the mobility rights of visually impaired individuals, particularly affecting those who are completely blind. These individuals face significant risks during navigation as they cannot identify these obstacles, even if they detect them, leading to considerable discomfort.
