@@ -95,6 +95,6 @@ def is_approaching(trajectory, observer_position):
 
 
 
-### 3. Project Presentation
+## Project Presentation
 <br/>(It is in Korean, but the graphics could help understand the idea)<br/>
 https://docs.google.com/presentation/d/1ycZrInbY8QWnPFpI34aBm5Wn_WDPIOKC/edit?usp=drive_link&ouid=107835171795359080960&rtpof=true&sd=true
