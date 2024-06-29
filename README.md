@@ -4,7 +4,7 @@ I designed and implemented a real-time pedestrian assistance system for visually
 
 [![Video Label](http://img.youtube.com/vi/tfpMqwRx1tE/0.jpg)](https://youtu.be/tfpMqwRx1tE)
 
-[Youtube Link]
+[Youtube]
 <br/> <br/>
 
 ## Table of Contents
